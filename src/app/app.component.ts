@@ -14,14 +14,14 @@ export class AppComponent {
 
   addOrganisation(addForm: NgForm) {
     this.http
-      .post('http://localhost:8000/api/organisations', addForm.value)
+      .post('http://localhost:8000/nested/api/organisations', addForm.value)
       .subscribe((data) => console.log('data', data));
   }
 
   searchOrganisation(searchForm: NgForm) {
     const name = searchForm.value.name;
     this.http
-      .get(`http://localhost:8000/api/organisations/${name}`)
+      .get(`http://localhost:8000/nested/api/organisations/${name}`)
       .subscribe((data) => {
         console.log('data', data);
       });
